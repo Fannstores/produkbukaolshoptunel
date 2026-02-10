@@ -1,44 +1,58 @@
 # produkbukaolshoptunel
-🚀 BukaOlshop VPS Tunneling Automation
-Script jembatan otomatis untuk menghubungkan BukaOlshop dengan VPS Tunneling. Support otomatisasi pembuatan akun SSH, Vmess, Vless, Trojan, dan ZiVPN dengan pembatasan IP serta Kuota GB.
-🛠 Fitur Utama
- * ✅ Otomatisasi Penuh: Akun dibuat detik itu juga setelah pembayaran.
- * ✅ Multi-Protocol: Support 8 jenis produk (SSH/Vmess/Vless/Trojan/ZiVPN).
- * ✅ Manajemen Resource: Limit 2 IP Login dan Kuota GB per akun.
- * ✅ Notifikasi Real-time: Laporan transaksi langsung ke Telegram Admin.
- * ✅ Update Tanpa Ribet: Fitur update paksa jika ada perubahan ID Produk.
-📥 Cara Instalasi Pertama Kali
-Buka terminal VPS kamu (sebagai root), lalu jalankan perintah sakti di bawah ini:
-wget -qO- https://github.com/Fannstores/produkbukaolshoptunel/main/install.sh | bash
+# 🚀 BukaOlshop VPS Tunneling Automation
 
-> Note: Saat instalasi, script akan meminta input Token Bot Telegram, API Key BukaOlshop, dan Domain API kamu.
-> 
-🔄 Cara Update (Ganti ID Produk / Perbaikan)
-Jika kamu ingin mengganti ID produk, menambah kuota, atau melakukan update setelah mengedit file di GitHub, gunakan perintah Update Paksa ini di VPS:  rm -f /var/www/html/api/bukaolshop.php && wget -O /var/www/html/api/bukaolshop.php "https://raw.githubusercontent.com/Fannstores/produkbukaolshoptunel/main/bukaolshop.php" && sed -i "s/TOKEN_TELE_PLACEHOLDER/TOKEN_LAMA_MU/g" /var/www/html/api/bukaolshop.php && echo "Update Berhasil!"
+Script jembatan otomatis (Middleware) untuk menghubungkan **BukaOlshop** dengan **VPS Tunneling**. Akun VPN langsung jadi dalam hitungan detik setelah pembayaran dikonfirmasi!
 
-Atau cara paling bersih adalah menjalankan ulang installer (Langkah 📥) agar semua variabel terbaru ikut terpasang.
-⚙️ Cara Penggunaan (Callback)
- * Pastikan Proxy Cloudflare di subdomain API kamu sudah ON (Orange) 🟠.
- * Set SSL Cloudflare ke Flexible.
- * Buka Dashboard BukaOlshop > Pengaturan > API & Callback.
- * Masukkan URL berikut di kolom Callback:
-   https://api.fanstore-vip.pro/api/bukaolshop.php
- * Klik Simpan. Pastikan muncul notif sukses (Kode 200).
-📋 Daftar ID Produk (Mapping)
-Edit file bukaolshop.php di GitHub kamu untuk menyesuaikan ID Produk:
-| ID Produk | Nama Layanan | Masa Aktif | Limit IP | Kuota GB |
-|---|---|---|---|---|
-| 101 | SSH Premium | 30 Hari | 2 IP | 50 GB |
-| 102 | Vmess VIP | 30 Hari | 2 IP | 100 GB |
-| ... | ... | ... | ... | ... |
-📞 Hubungi Layanan Pelanggan
-Jika mengalami kendala teknis atau butuh bantuan instalasi, silakan hubungi CS kami:
-| Platform | Kontak |
-|---|---|
-| Telegram | @fauziid |
-| WhatsApp | +62 812-4758-6568 |
-| Owner | [Fanstore VIP Support] |
-🛡 Lisensi
-Dibuat dengan ❤️ untuk komunitas Tunneling Indonesia. Gunakan dengan bijak!
-Tips Tambahan buat Kamu:
- * Ganti Username: Jangan lupa ganti semua tulisan USERNAME_KAMU dan REPO_KAMU dengan data asli GitHub-mu.
+---
+
+## 🛠 Fitur Utama
+* ✅ **Otomatisasi Penuh**: Tidak perlu manual buat akun lagi.
+* ✅ **8 Slot Produk**: Mendukung SSH, Vmess, Vless, Trojan, & ZiVPN.
+* ✅ **Smart Resource**: Limit 2 IP Login & Kuota GB per user.
+* ✅ **Telegram Notif**: Laporan orderan masuk langsung ke HP kamu.
+* ✅ **Dual Route**: Mendukung HTTPS Cloudflare (Proxy ON) untuk API.
+
+---
+
+## 📥 Cara Instalasi (Copy & Paste)
+
+Buka terminal VPS kamu (Root), salin kode di bawah ini, lalu tekan **Enter**:
+
+```bash
+wget -qO- [https://raw.githubusercontent.com/Fannstores/produkbukaolshoptunel/main/install.sh](https://raw.githubusercontent.com/Fannstores/produkbukaolshoptunel/main/install.sh) | bash
+
+🔄 Cara Update Paksa (Sync GitHub)
+Jika kamu baru saja mengubah ID Produk atau mengganti Kuota di file bukaolshop.php di GitHub, gunakan perintah ini untuk memperbarui file di VPS tanpa install ulang:
+rm -f /var/www/html/api/bukaolshop.php && wget -O /var/www/html/api/bukaolshop.php "[https://raw.githubusercontent.com/Fannstores/produkbukaolshoptunel/main/bukaolshop.php](https://raw.githubusercontent.com/Fannstores/produkbukaolshoptunel/main/bukaolshop.php)" && echo "Berhasil Update dari GitHub!"
+
+⚙️ Cara Penggunaan di BukaOlshop
+ * Pastikan Subdomain API kamu di Cloudflare sudah Proxy ON (Orange) 🟠.
+ * Set SSL Cloudflare ke mode Flexible.
+ * Masukkan URL Callback berikut di Panel BukaOlshop:
+   [https://api.domainmu/api/bukaolshop.php](https://api.domainmu/api/bukaolshop.php)
+
+📞 Hubungi Layanan Pelanggan (CS)
+Jika ada kendala instalasi atau ingin kustomisasi script, silakan hubungi kami:
+| Platform | Link Kontak | Jam Kerja |
+|---|---|---|
+| Telegram | ✉️ Chat di Telegram :https:/t.me/fauziid | 24/7 Fast Respond |
+| WhatsApp | 📱 Chat di WhatsApp :https:/wa.me/6281247586568 | 08:00 - 22:00 WIB |
+📋 Catatan Penting
+ * Pastikan script pembuat akun kamu berada di /usr/bin/ dengan nama:
+   * create-ssh.sh
+   * create-vmess.sh
+   * create-vless.sh
+   * create-trojan.sh
+   * create-zivpn.sh
+ * Pastikan izin sudoers sudah terkonfigurasi dengan benar melalui installer.
+Dibuat oleh [Fanstore VIP] 🗿
+
+---
+
+### Cara Menggunakannya di GitHub:
+1.  Buka repository kamu di GitHub.
+2.  Klik tombol **Add file** -> **Create new file**.
+3.  Beri nama file: `README.md`.
+4.  Tempel (Paste) kode di atas ke dalam kotak teks.
+5.  Ganti bagian `USERNAME_KAMU`, `REPO_KAMU`, dan nomor WhatsApp/Telegram dengan data asli milikmu.
+6.  Klik **Commit changes**.
