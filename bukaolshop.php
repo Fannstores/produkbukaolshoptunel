@@ -8,8 +8,8 @@ $HOST_VPN       = "vps.DOMAIN_PLACEHOLDER";
 
 // DAFTAR 8 PRODUK (Ganti ID angka di bawah ini dengan ID BukaOlshop kamu)
 $daftar_produk = [
-    "101" => ["nama"=>"SSH 30D 50GB", "type"=>"ssh", "masa"=>30, "ip"=>2, "gb"=>50],
-    "102" => ["nama"=>"VMESS 30D 100GB", "type"=>"vmess", "masa"=>30, "ip"=>2, "gb"=>100],
+    "3351512" => ["nama"=>"Vmess 30hari", "type"=>"ssh", "masa"=>30, "ip"=>2, "gb"=>115],
+    "3351509" => ["nama"=>"Vmess 7hari", "type"=>"vmess", "masa"=>7, "ip"=>2, "gb"=>30],
     "103" => ["nama"=>"VLESS 30D 100GB", "type"=>"vless", "masa"=>30, "ip"=>2, "gb"=>100],
     "104" => ["nama"=>"TROJAN 30D 100GB", "type"=>"trojan", "masa"=>30, "ip"=>2, "gb"=>100],
     "105" => ["nama"=>"ZIVPN 30D 50GB", "type"=>"zivpn", "masa"=>30, "ip"=>2, "gb"=>50],
